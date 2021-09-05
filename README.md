@@ -141,7 +141,7 @@ This configuration tells npx nx serve to forward all requests starting with /api
 4 - Connect to API
 5 - Add Node Application
 6 - Configure Proxy
-7 - Share Code
+7 - Share Code   `npx nx g @nrwl/workspace:lib data` restart VS code to after install library in workspace each time
 8 - Create Libraries
 9 - Dep Graph
 10 - Use Computation Caching

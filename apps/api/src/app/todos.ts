@@ -1,4 +1,5 @@
 import { Express } from 'express';
+import { Todo } from '@nx-project/data';
 
 interface Todo {
   title: string;

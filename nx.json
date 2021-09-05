@@ -30,6 +30,9 @@
     "api": {
       "tags": []
     },
+    "data": {
+      "tags": []
+    },
     "todos": {
       "tags": []
     },

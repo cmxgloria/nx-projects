@@ -1,12 +1,9 @@
-import styles from './app.module.css';
+import { useEffect, useState } from 'react';
+import { Todo } from '@nx-project/data';
 
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
-import React, { useEffect, useState } from 'react';
-
-interface Todo {
-  title: string;
-}
+// interface Todo {
+//   title: string;
+// }
 
 export function App() {
   const [todos, setTodos] = useState<Todo[]>([]);

@@ -51,6 +51,27 @@
         }
       }
     },
+    "data": {
+      "root": "libs/data",
+      "sourceRoot": "libs/data/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data"],
+          "options": {
+            "jestConfig": "libs/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "todos": {
       "root": "apps/todos",
       "sourceRoot": "apps/todos/src",
@@ -96,7 +117,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/web:dev-server",
+          "executor": "@nrwl/web:dev-server",
           "options": {
             "buildTarget": "todos:build",
             "proxyConfig": "apps/todos/proxy.conf.json"
