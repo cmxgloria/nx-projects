@@ -1,5 +1,3 @@
-
-
 # NxProject
 
 This project was generated using [Nx](https://nx.dev).
@@ -79,8 +77,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
 
-
-
 ## ☁ Nx Cloud
 
 ### Distributed Computation Caching & Distributed Task Execution
@@ -92,3 +88,68 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+## steps
+
+1. after write function in app.ts in appName `todos`
+2. Generate an Express application `npx nx g @nrwl/express:app api --frontendProject=todos`
+   install express for backend and add file under app under api folder(proxy configuration that allows the React application to talk to the API in development.)
+3. Configure proxy
+   Next update apps/api/src/main.ts to register the routes `addTodoRoutes(app);`
+
+```To see how it works, open workspace.json and find the serve target of the todos app.
+
+
+Copy
+{
+  "serve": {
+    "builder": "@nrwl/web:dev-server",
+    "options": {
+      "buildTarget": "todos:build",
+      "proxyConfig": "apps/todos/proxy.conf.json"
+    },
+    "configurations": {
+      "production": {
+        "buildTarget": "todos:build:production"
+      }
+    }
+  }
+}
+Note the proxyConfig property.
+
+Now open proxy.conf.json:
+
+
+Copy
+{
+  "/api": {
+    "target": "http://localhost:3333",
+    "secure": false
+  }
+}
+```
+
+This configuration tells npx nx serve to forward all requests starting with /api to the process listening on port 3333.
+
+## outline
+
+```
+
+1 - Create Application
+2 - Add E2E Test
+3 - Display Todos
+4 - Connect to API
+5 - Add Node Application
+6 - Configure Proxy
+7 - Share Code
+8 - Create Libraries
+9 - Dep Graph
+10 - Use Computation Caching
+11 - Test Affected Projects
+12 - Summary
+
+```
+
+```
+
+```
