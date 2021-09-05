@@ -1,9 +1,9 @@
 import { Express } from 'express';
 import { Todo } from '@nx-project/data';
 
-interface Todo {
-  title: string;
-}
+// interface Todo {
+//   title: string;
+// }
 
 const todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Todo } from '@nx-project/data';
+import { Todos } from '@nx-project/ui';
 
 // interface Todo {
 //   title: string;
@@ -37,11 +38,12 @@ export function App() {
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo
       </button>
-      <ul>
+      <Todos todos={todos} />
+      {/* <ul>
         {todos.map((t) => (
           <li className={'todo'}>{t.title}</li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }
